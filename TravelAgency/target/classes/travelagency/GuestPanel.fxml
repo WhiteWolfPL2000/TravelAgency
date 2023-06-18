@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-color: #FFFFCC;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelagency.LoggedInController">
+   <top>
+      <AnchorPane prefHeight="208.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="searchTextField" layoutX="266.0" layoutY="161.0" prefHeight="25.0" prefWidth="545.0" promptText="Wyszukaj" />
+            <Button fx:id="searchButton" layoutX="823.0" layoutY="161.0" mnemonicParsing="false" text="Szukaj" />
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/img/logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutButton" contentDisplay="CENTER" layoutX="1026.0" layoutY="6.0" mnemonicParsing="false" style="-fx-background-color: #FFFFCC; -fx-cursor: hand;" text="Wyloguj" textAlignment="CENTER" textFill="#0051ff" />
+            <Label fx:id="nameOfUserLabel" layoutX="910.0" layoutY="10.0" prefHeight="17.0" prefWidth="116.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="692.0" prefWidth="865.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableView" layoutX="20.0" layoutY="-2.0" prefHeight="687.0" prefWidth="1079.0" style="-fx-background-color: #FFFFCC;">
+              <columns>
+                <TableColumn fx:id="image" prefWidth="264.0" style="-fx-background-color: #FFFFCC;" />
+                <TableColumn fx:id="name" prefWidth="102.0" style="-fx-background-color: #FFFFCC;" text="Nazwa" />
+                  <TableColumn fx:id="desc" prefWidth="281.0" style="-fx-background-color: #FFFFCC;" text="Opis" />
+                  <TableColumn fx:id="price" prefWidth="89.0" style="-fx-background-color: #FFFFCC;" text="Cena" />
+                  <TableColumn fx:id="reservation" prefWidth="186.0" style="-fx-background-color: #FFFFCC;" text="Dokonaj rezerwacji" />
+                  <TableColumn fx:id="countPerson" prefWidth="156.0" style="-fx-background-color: #FFFFCC;" text="Ile osób" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

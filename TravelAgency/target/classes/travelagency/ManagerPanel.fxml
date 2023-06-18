@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #FFFFCC;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelagency.ManagerController">
+   <center>
+      <AnchorPane prefHeight="480.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="480.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Zarządzanie użytkownikami">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tableView" layoutX="34.0" layoutY="29.0" prefHeight="441.0" prefWidth="459.0">
+                                <columns>
+                                  <TableColumn fx:id="IdUser" prefWidth="121.0" text="IdUzytkownika" />
+                                    <TableColumn fx:id="UserName" prefWidth="168.0" text="NazwaUzytkownika" />
+                                    <TableColumn fx:id="rank" prefWidth="169.0" text="Ranga" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="fetchUserData" layoutX="172.0" layoutY="2.0" mnemonicParsing="false" text="Pobierz dane użytkowników" />
+                              <Button fx:id="deleteUser" layoutX="526.0" layoutY="61.0" mnemonicParsing="false" text="Usuń użytkownika" />
+                              <ComboBox fx:id="usersComboBox" layoutX="507.0" layoutY="27.0" prefWidth="150.0" promptText="Wybierz.." />
+                              <Button fx:id="addEmployee" layoutX="514.0" layoutY="101.0" mnemonicParsing="false" text="Dodaj jako Pracownika" />
+                              <Label fx:id="confirmEmployee" layoutX="517.0" layoutY="205.0" prefHeight="17.0" prefWidth="149.0" />
+                              <Button fx:id="derank" layoutX="547.0" layoutY="139.0" mnemonicParsing="false" text="Zdegraduj" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Zarządzanie wycieczkami">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                  <Label layoutX="23.0" layoutY="21.0" text="Przegląd obecnie aktywnych miejsc podróży" />
+                                  <TableView fx:id="tripTable" layoutX="23.0" layoutY="51.0" prefHeight="200.0" prefWidth="615.0">
+                                      <columns>
+                                          <TableColumn fx:id="idCol" prefWidth="85.0" text="ID" />
+                                          <TableColumn fx:id="placeCol" prefWidth="110.0" text="Miejsce" />
+                                          <TableColumn fx:id="priceCol" prefWidth="97.0" text="Cena" />
+                                          <TableColumn fx:id="spotsCol" prefWidth="116.0" text="Ilość miejsc" />
+                                          <TableColumn fx:id="vehicleCol" minWidth="2.0" prefWidth="105.0" text="Transport" />
+                                          <TableColumn fx:id="visibilityCol" prefWidth="101.0" text="Widoczna" />
+                                      </columns>
+                                  </TableView>
+                                  <Label layoutX="23.0" layoutY="271.0" prefHeight="17.0" prefWidth="146.0" text="Ustawienie widoczności" />
+                                  <Button fx:id="visibilityButton" layoutX="199.0" layoutY="294.0" mnemonicParsing="false" text="Zmień widoczność" />
+                                  <ComboBox fx:id="visibilityCombobox" layoutX="23.0" layoutY="294.0" prefWidth="150.0" promptText="Wybierz.." />
+                                  <TextField fx:id="priceField" layoutX="199.0" layoutY="354.0" promptText="Cena" />
+                                  <ComboBox fx:id="priceCombobox" layoutX="23.0" layoutY="354.0" prefWidth="150.0" promptText="Wybierz.." />
+                                  <Button fx:id="priceButton" layoutX="373.0" layoutY="354.0" mnemonicParsing="false" text="Ustaw nową cenę" />
+                                  <Label layoutX="23.0" layoutY="329.0" text="Zmiana ceny wycieczki" />
+                                  <Button fx:id="fetchPlacesData" layoutX="287.0" layoutY="17.0" mnemonicParsing="false" text="Pobierz aktualne miejsca podróży" />
+                              <Label layoutX="23.0" layoutY="402.0" text="Zmiana ilości miejsc wycieczki" />
+                              <ComboBox fx:id="comboboxSpots" layoutX="21.0" layoutY="425.0" prefWidth="150.0" promptText="Wybierz.." />
+                              <TextField fx:id="spotsField" layoutX="199.0" layoutY="425.0" promptText="Ile miejsc" />
+                              <Button fx:id="spotsButton" layoutX="373.0" layoutY="425.0" mnemonicParsing="false" text="Ustaw nową ilość miejsc" />
+                              </children></AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab text="Dodaj wycieczkę">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="newPlace_ID" layoutX="276.0" layoutY="14.0" promptText="id" />
+                              <TextField fx:id="newPlace_keywords" layoutX="276.0" layoutY="50.0" promptText="keywords" />
+                              <TextField fx:id="newPlace_price" layoutX="276.0" layoutY="86.0" promptText="price" />
+                              <TextField fx:id="newPlace_description" layoutX="276.0" layoutY="124.0" prefHeight="69.0" prefWidth="149.0" promptText="description" />
+                              <TextField fx:id="newPlace_path" layoutX="276.0" layoutY="209.0" promptText="path" />
+                              <TextField fx:id="newPlace_country" layoutX="276.0" layoutY="247.0" promptText="country" />
+                              <TextField fx:id="newPlace_visibility" layoutX="276.0" layoutY="286.0" promptText="visible" />
+                              <TextField fx:id="newPlace_transport" layoutX="276.0" layoutY="324.0" promptText="transport" />
+                              <TextField fx:id="newPlace_spots" layoutX="276.0" layoutY="364.0" promptText="spots" />
+                              <Label layoutX="197.0" layoutY="18.0" text="Id miejsca" />
+                              <Label layoutX="182.0" layoutY="54.0" text="Słowa kluczowe" />
+                              <Label layoutX="210.0" layoutY="90.0" text="Cena" />
+                              <Label layoutX="210.0" layoutY="150.0" text="Opis" />
+                              <Label layoutX="185.0" layoutY="213.0" text="Ścieżka zdjęcia" />
+                              <Label layoutX="202.0" layoutY="251.0" text="Państwo" />
+                              <Label layoutX="109.0" layoutY="290.0" text="Czy widoczna? 1 - tak 0 - nie" />
+                              <Label layoutX="199.0" layoutY="328.0" text="Transport" />
+                              <Label layoutX="194.0" layoutY="368.0" text="Ilość miejsc" />
+                              <Button fx:id="approve" layoutX="325.0" layoutY="404.0" mnemonicParsing="false" text="Dodaj" />
+                              <Label fx:id="warning" layoutX="109.0" layoutY="408.0" textFill="RED" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="20.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logoutButton" layoutX="640.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0" style="-fx-background-color: #FFFFCC; -fx-cursor: hand;" text="Wyloguj" textFill="#0051ff" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
